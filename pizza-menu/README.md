@@ -1,16 +1,40 @@
-# React + Vite
+# 🍕 Pizza Menu (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React project built while learning React (with Jonas on Udemy).  
+It showcases a small pizza menu for **Fast React Pizza Co.**, where each pizza has a name, ingredients, price, image, and availability status.
 
-Currently, two official plugins are available:
+## ✨ Features
+- Displays a list of pizzas dynamically from a `pizzaData` array
+- Shows pizza name, ingredients, price, and image
+- Highlights pizzas that are **sold out**
+- Conditional rendering for when the restaurant is open/closed
+- Built with **React** + **Vite** + **CSS**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Project Structure
+pizza-menu/
+├── src/
+│ ├── App.jsx       # Main React component
+│ ├── index.css     # Styles
+│ └── main.jsx      # Entry point
+├── public/pizzas/  # Pizza images
+├── package.json
+└── README.md
 
-## React Compiler
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+1. **Install dependencies**
+   ```bash
+   npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Run development server**
+   ```bash
+   npm run dev
+
+📝 Notes
+
+. Opening hours are set from 12:00 to 22:00.
+
+. If the restaurant is closed, the footer displays a message instead of the order button.
+
+. This is an educational project for practicing React fundamentals: components, props, lists & keys, conditional rendering.
