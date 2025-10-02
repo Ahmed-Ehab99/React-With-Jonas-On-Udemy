@@ -11,15 +11,15 @@ It showcases a small pizza menu for **Fast React Pizza Co.**, where each pizza h
 - Built with **React** + **Vite** + **CSS**
 
 ## 📂 Project Structure
+```
 pizza-menu/
 ├── src/
-│ ├── App.jsx       # Main React component
-│ ├── index.css     # Styles
-│ └── main.jsx      # Entry point
-├── public/pizzas/  # Pizza images
-├── package.json
-└── README.md
-
+│ ├── App.jsx     # Main React component
+│ ├── index.css   # Styles
+│ └── main.jsx    # Entry point
+├── public/
+  └── pizzas/     # Pizza images
+```
 
 ## 🚀 Getting Started
 
