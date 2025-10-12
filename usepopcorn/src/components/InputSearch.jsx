@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const InputSearch = () => {
-  const [query, setQuery] = useState("");
-  
+export const InputSearch = ({ query, setQuery }) => {
   return (
     <input
       className="search"
