@@ -1,12 +1,12 @@
 import React from "react";
 
-const WatchedList = ({ watched, onDeleteWatched }) => {
+const WatchedList = ({ watched, onDeleteWatched, onSelectMovie }) => {
   return (
     <ul className="list">
       {watched.map((movie) => (
         <li key={movie.imdbID}>
           <img src={movie.Poster} alt={`${movie.Title} poster`} />
-          <h3>{movie.Title}</h3>
+          <h3 onClick={() => onSelectMovie(movie.imdbID)}>{movie.Title}</h3>
           <div>
             <p>
               <span>⭐️</span>

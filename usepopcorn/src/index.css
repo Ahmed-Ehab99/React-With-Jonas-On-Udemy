@@ -176,6 +176,7 @@ body {
 
 .list h3 {
   font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .list div {

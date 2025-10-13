@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { apiKey } from "../App";
+import React, { useEffect, useRef, useState } from "react";
+import { useKey } from "../custom-hooks/useKey";
+import { apiKey } from "../custom-hooks/useMovies";
 import Loader from "./Loader";
 import StarRating from "./StarRating";
 
@@ -7,6 +8,8 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
   const [movie, setMovie] = useState({});
   const [userRating, setUserRating] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const countRef = useRef(0);
+  useKey("Backspace", onCloseMovie);
   const {
     Title,
     Year,
@@ -20,50 +23,50 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
     Genre,
   } = movie;
 
-  useEffect(() => {
-    const getMovieDetails = async () => {
-      try {
-        setIsLoading(true);
-        const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${apiKey}&i=${selectedId}`
-        );
+  useEffect(
+    function () {
+      const getMovieDetails = async function () {
+        try {
+          setIsLoading(true);
+          const res = await fetch(
+            `http://www.omdbapi.com/?apikey=${apiKey}&i=${selectedId}`
+          );
 
-        const data = await res.json();
-        setMovie(data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+          const data = await res.json();
+          setMovie(data);
+        } catch (error) {
+          console.error(error);
+        } finally {
+          setIsLoading(false);
+        }
+      };
 
-    getMovieDetails();
-  }, [selectedId]);
+      getMovieDetails();
+    },
+    [selectedId]
+  );
 
-  useEffect(() => {
-    if (!Title) return;
-    document.title = `Movie | ${Title}`;
+  useEffect(
+    function () {
+      if (!Title) return;
+      document.title = `Movie | ${Title}`;
 
-    // Cleanup Function
-    return () => {
-      document.title = "usePopcorn";
-    };
-  }, [Title]);
+      // Cleanup Function
+      return function () {
+        document.title = "usePopcorn";
+      };
+    },
+    [Title]
+  );
 
-  useEffect(() => {
-    const callBack = (e) => {
-      if (e.code === "Backspace") {
-        onCloseMovie();
-      }
-    };
-    document.addEventListener("keydown", callBack);
-    // Cleanup Function
-    return () => {
-      document.removeEventListener("keydown", callBack);
-    };
-  }, [onCloseMovie]);
+  useEffect(
+    function () {
+      if (userRating) countRef.current++;
+    },
+    [userRating]
+  );
 
-  const handleAdd = () => {
+  function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
       Title,
@@ -72,10 +75,11 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
       imdbRating: Number(imdbRating),
       Runtime: Number(Runtime.split(" ").at(0)),
       userRating,
+      countRatingDecisions: countRef.current,
     };
     onAddWatched(newWatchedMovie);
     onCloseMovie();
-  };
+  }
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
   const watchedUserRaing = watched.find(
