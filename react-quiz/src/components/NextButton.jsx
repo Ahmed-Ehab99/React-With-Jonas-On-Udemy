@@ -1,6 +1,8 @@
 import React from "react";
+import { useQuiz } from "../hooks/useQuiz";
 
-const NextButton = ({ dispatch, answer, index, numQuestions }) => {
+const NextButton = () => {
+  const { dispatch, answer, index, numQuestions } = useQuiz();
   if (answer === null) return null;
 
   if (index < numQuestions - 1)
@@ -12,7 +14,7 @@ const NextButton = ({ dispatch, answer, index, numQuestions }) => {
         Next
       </button>
     );
-  
+
   if (index === numQuestions - 1)
     return (
       <button

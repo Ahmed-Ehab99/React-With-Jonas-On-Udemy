@@ -1,6 +1,8 @@
 import React from "react";
+import { useQuiz } from "../hooks/useQuiz";
 
-const FinishScreen = ({ points, totalPoints, highscore, dispatch }) => {
+const FinishScreen = () => {
+  const { points, totalPoints, highscore, dispatch } = useQuiz();
   const percentage = (points / totalPoints) * 100;
   let emoji;
 
