@@ -4,7 +4,7 @@
   list-style: none;
   overflow-y: scroll;
   overflow-x: hidden;
-
+  scrollbar-width: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: start;

@@ -1,40 +1,64 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
+      "cityName": "MacDonnell",
+      "country": "Australia",
+      "emoji": "🇦🇺",
+      "date": "2025-10-19T23:23:40.314Z",
+      "notes": "dfdfdfdf",
       "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
+        "lat": "-25.008920937383866",
+        "lng": "134.9090013057874"
       },
-      "id": 73930385
+      "id": 98443200
     },
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "cityName": "Sao Jose do Xingu",
+      "country": "Brazil",
+      "emoji": "🇧🇷",
+      "date": "2025-10-19T23:23:51.846Z",
+      "notes": "asdasda",
+      "position": {
+        "lat": "-10.75596189428698",
+        "lng": "-52.911457302228555"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Laukaa",
+      "country": "Finland",
+      "emoji": "🇫🇮",
+      "date": "2025-10-20T00:27:25.141Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "62.34873923191782",
+        "lng": "26.015263596603198"
       },
-      "id": 17806751
+      "id": 98443202
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "cityName": "Saint-Aout",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2025-10-20T00:29:51.144Z",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
+        "lat": "46.737636695008455",
+        "lng": "1.9880596403490538"
       },
-      "id": 98443197
+      "id": 98443203
+    },
+    {
+      "cityName": "Al",
+      "country": "Norway",
+      "emoji": "🇳🇴",
+      "date": "2025-10-20T00:30:05.082Z",
+      "notes": "",
+      "position": {
+        "lat": "60.75894402210932",
+        "lng": "8.69394380706366"
+      },
+      "id": 98443204
     }
   ]
 }
