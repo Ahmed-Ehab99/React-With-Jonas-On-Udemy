@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { usePosts } from "../providers/usePosts";
 import Results from "./Results";
 import SearchPosts from "./SearchPosts";
 
-const Header = () => {
+const Header = memo(() => {
   // 3) Consuming context value
   const { onClearPosts } = usePosts();
   return (
@@ -19,6 +19,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

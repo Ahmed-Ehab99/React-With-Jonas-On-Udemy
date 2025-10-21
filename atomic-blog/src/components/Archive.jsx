@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { usePosts } from "../providers/usePosts";
 import { createRandomPost } from "../utils/index";
+import ArchivePost from "./ArchivePost";
 
-const Archive = () => {
+const Archive = memo(() => {
   const [posts] = useState(() =>
     Array.from({ length: 10000 }, () => createRandomPost())
   );
@@ -19,17 +20,12 @@ const Archive = () => {
       {showArchive && (
         <ul>
           {posts.map((post, i) => (
-            <li key={i}>
-              <p>
-                <strong>{post.title}:</strong> {post.body}
-              </p>
-              <button onClick={() => onAddPost(post)}>Add as new post</button>
-            </li>
+            <ArchivePost key={i} post={post} onAddPost={onAddPost} />
           ))}
         </ul>
       )}
     </aside>
   );
-};
+});
 
 export default Archive;
