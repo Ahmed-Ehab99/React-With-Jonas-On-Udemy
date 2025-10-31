@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { createUpdateCabin } from "../../services/apiCabins";
 
-const useCreateCabin = () => {
+export const useCreateCabin = () => {
   const queryClient = useQueryClient();
   const { mutate: createCabin, isPending: isCreating } = useMutation({
     mutationFn: (newCabin) => createUpdateCabin(newCabin, undefined),
@@ -17,5 +17,3 @@ const useCreateCabin = () => {
   });
   return { createCabin, isCreating };
 };
-
-export default useCreateCabin;

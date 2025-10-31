@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getSettings } from "../../services/apiSettings";
 
-const useSettings = () => {
+export const useSettings = () => {
   const {
     isPending,
     error,
@@ -13,5 +13,3 @@ const useSettings = () => {
 
   return { isPending, error, settings };
 };
-
-export default useSettings;

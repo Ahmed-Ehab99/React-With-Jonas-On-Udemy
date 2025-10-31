@@ -7,8 +7,8 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Textarea from "../../ui/Textarea";
 
-import useCreateCabin from "./useCreateCabin";
-import useUpdateCabin from "./useUpdateCabin";
+import {useCreateCabin} from "./useCreateCabin";
+import {useUpdateCabin} from "./useUpdateCabin";
 
 function CreateCabinForm({ cabinToUpdate = {}, onCloseModal }) {
   const { id: updateId, ...updateValue } = cabinToUpdate;
