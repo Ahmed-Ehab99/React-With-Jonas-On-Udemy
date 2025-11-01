@@ -15,6 +15,7 @@ import { useMoveBack } from "../../hooks/useMoveBack";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Empty from "../../ui/Empty";
 import Modal from "../../ui/Modal";
+import { statusToTagName } from "../../utils/constants";
 import { useCheckout } from "../check-in-out/useCheckout";
 import { useBooking } from "./useBooking";
 import { useDeleteBooking } from "./useDeleteBooking";
@@ -32,12 +33,6 @@ function BookingDetail() {
   const { deleteBooking, isDeleting } = useDeleteBooking();
   const { checkout, isCheckingOut } = useCheckout();
   const { status, id: bookingId } = booking || {};
-
-  const statusToTagName = {
-    unconfirmed: "blue",
-    "checked-in": "green",
-    "checked-out": "silver",
-  };
 
   if (isPending) return <Spinner />;
   if (!booking) return <Empty resourceName="booking" />;

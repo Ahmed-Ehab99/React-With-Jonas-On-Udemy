@@ -29,7 +29,7 @@ const UserAvatar = () => {
   return (
     <StyledUserAvatar>
       <Avatar
-        src={avatar || "default-user.jpg"}
+        src={avatar || "default-user.webp"}
         alt={`Avatar of ${fullName}`}
         loading="lazy"
       />
