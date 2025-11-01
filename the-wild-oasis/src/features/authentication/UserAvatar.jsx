@@ -31,6 +31,7 @@ const UserAvatar = () => {
       <Avatar
         src={avatar || "default-user.jpg"}
         alt={`Avatar of ${fullName}`}
+        loading="lazy"
       />
       <span>{fullName}</span>
     </StyledUserAvatar>

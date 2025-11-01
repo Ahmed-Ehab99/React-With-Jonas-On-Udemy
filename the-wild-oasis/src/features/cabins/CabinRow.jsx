@@ -7,8 +7,8 @@ import Modal from "../../ui/Modal";
 import Table from "../../ui/Table";
 import { formatCurrency } from "../../utils/helpers";
 import CreateCabinForm from "./CreateCabinForm";
-import {useCreateCabin} from "./useCreateCabin";
-import {useDeleteCabin} from "./useDeleteCabin";
+import { useCreateCabin } from "./useCreateCabin";
+import { useDeleteCabin } from "./useDeleteCabin";
 
 const Img = styled.img`
   display: block;
@@ -16,7 +16,6 @@ const Img = styled.img`
   aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.5) translateX(-7px);
 `;
 
 const Cabin = styled.div`
@@ -64,7 +63,7 @@ function CabinRow({ cabin }) {
 
   return (
     <Table.Row>
-      <Img src={image} />
+      <Img src={image} loading="lazy" />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>

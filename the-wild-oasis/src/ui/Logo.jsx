@@ -6,8 +6,8 @@ const StyledLogo = styled.div`
 `;
 
 const Img = styled.img`
-  height: 9.6rem;
-  width: auto;
+  width: 15rem;
+  height: auto;
 `;
 
 function Logo() {
@@ -17,7 +17,7 @@ function Logo() {
 
   return (
     <StyledLogo>
-      <Img src={src} alt="Logo" />
+      <Img src={src} alt="Logo" loading="lazy" width={150} height={150} />
     </StyledLogo>
   );
 }
