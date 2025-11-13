@@ -1,7 +1,6 @@
 "use client";
 
 import { sideNavigationLinks } from "@/lib/constant";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SignOutButton from "./SignOutButton";
@@ -15,10 +14,7 @@ const SideNavigation = () => {
         {sideNavigationLinks.map((link) => (
           <li key={link.name}>
             <Link
-              className={cn(
-                pathname === link.href ? "bg-primary-900" : "",
-                "hover:bg-primary-900 hover:text-primary-100 text-primary-200 flex items-center gap-4 px-5 py-3 font-semibold transition-colors",
-              )}
+              className={`${pathname === link.href ? "bg-primary-900" : ""} hover:bg-primary-900 hover:text-primary-100 text-primary-200 flex items-center gap-4 px-5 py-3 font-semibold transition-colors`}
               href={link.href}
             >
               <link.icon className="text-primary-600 h-5 w-5" />
