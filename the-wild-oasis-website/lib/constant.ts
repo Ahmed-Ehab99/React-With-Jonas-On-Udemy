@@ -1,4 +1,4 @@
-import { Calendar, Home, User } from "lucide-react";
+import { Calendar, User } from "lucide-react";
 
 export const filters = [
   { value: "all", label: "All cabins" },
@@ -7,12 +7,7 @@ export const filters = [
   { value: "large", label: "8–12 guests" },
 ] as const;
 
-export const navLinks = [
-  {
-    name: "Home",
-    href: "/account",
-    icon: Home,
-  },
+export const sideNavigationLinks = [
   {
     name: "Reservations",
     href: "/account/reservations",
@@ -23,4 +18,4 @@ export const navLinks = [
     href: "/account/profile",
     icon: User,
   },
-];
+] as const;

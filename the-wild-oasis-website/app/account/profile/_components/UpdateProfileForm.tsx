@@ -3,6 +3,8 @@
 import { updateProfileAction } from "@/lib/actions";
 import { GuestT } from "@/lib/types";
 import Image from "next/image";
+import { useTransition } from "react";
+import toast from "react-hot-toast";
 import SubmitBtn from "../../_components/SubmitBtn";
 
 const UpdateProfileForm = ({
@@ -13,10 +15,27 @@ const UpdateProfileForm = ({
   guest: GuestT | null;
 }) => {
   const { fullName, email, nationalID, countryFlag } = guest ?? {};
+  const [, startTransition] = useTransition();
+
+  const handleSubmit = async (formData: FormData) => {
+    startTransition(async () => {
+      const result = await updateProfileAction(formData);
+
+      if (result?.error) {
+        toast.error(result.error, {
+          duration: 4000,
+        });
+      } else if (result?.success) {
+        toast.success("Profile updated successfully!", {
+          duration: 3000,
+        });
+      }
+    });
+  };
 
   return (
     <form
-      action={updateProfileAction}
+      action={handleSubmit}
       className="bg-primary-900 flex flex-col gap-6 px-12 py-8 text-lg"
     >
       <div className="space-y-2">

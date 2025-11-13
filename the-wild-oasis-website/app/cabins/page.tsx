@@ -1,16 +1,13 @@
 import FullPageSpinner from "@/components/FullPageSpinner";
 import { Metadata } from "next";
 import { Suspense } from "react";
-import ReservationReminder from "./_components/ReservationReminder";
 import CabinList from "./_components/CabinList";
 import Filter from "./_components/Filter";
+import ReservationReminder from "./_components/ReservationReminder";
 
 export const metadata: Metadata = {
   title: "Cabins",
 };
-
-// ISR
-// export const revalidate = 3600;
 
 const CabinPage = async ({
   searchParams,

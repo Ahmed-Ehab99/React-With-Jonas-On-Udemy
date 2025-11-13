@@ -13,6 +13,9 @@ const ReservationsPage = async () => {
 
   return (
     <div>
+      <h1 className="text-accent-400 mb-7 text-3xl font-semibold">
+        Welcome, {session?.user?.name}
+      </h1>
       <h2 className="text-accent-400 mb-7 text-2xl font-semibold">
         Your reservations
       </h2>

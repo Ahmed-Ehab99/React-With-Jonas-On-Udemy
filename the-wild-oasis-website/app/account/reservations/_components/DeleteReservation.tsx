@@ -1,6 +1,6 @@
 "use client";
 
-import { Spinner } from "@/components/ui/spinner";
+import SpinnerMini from "@/components/SpinnerMini";
 import { Trash2 } from "lucide-react";
 import { useTransition } from "react";
 
@@ -14,7 +14,6 @@ const DeleteReservation = ({
   const [isPending, startTransition] = useTransition();
 
   const handleDelete = () => {
-    // TOAST HERE
     startTransition(async () => {
       await onDelete(bookingId);
     });
@@ -31,7 +30,7 @@ const DeleteReservation = ({
           <span className="mt-1">Delete</span>
         </>
       ) : (
-        <Spinner className="mx-auto size-7" />
+        <SpinnerMini />
       )}
     </button>
   );

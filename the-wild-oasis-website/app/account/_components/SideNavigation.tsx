@@ -1,6 +1,6 @@
 "use client";
 
-import { navLinks } from "@/lib/constant";
+import { sideNavigationLinks } from "@/lib/constant";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,10 +8,11 @@ import SignOutButton from "./SignOutButton";
 
 const SideNavigation = () => {
   const pathname = usePathname();
+
   return (
-    <nav className="border-primary-900 sticky top-0 h-screen border-r">
+    <nav className="border-primary-900 h-full border-r">
       <ul className="flex h-full flex-col gap-2 text-lg">
-        {navLinks.map((link) => (
+        {sideNavigationLinks.map((link) => (
           <li key={link.name}>
             <Link
               className={cn(

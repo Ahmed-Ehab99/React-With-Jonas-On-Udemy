@@ -14,8 +14,6 @@ export async function generateMetadata({
   return { title: `Cabin ${name}` };
 }
 
-// make this file static instead of dynamic in building (deploying)
-// SSG
 export async function generateStaticParams() {
   const cabins = await getCabins();
   const ids = cabins.map((cabin) => ({ cabinId: String(cabin.id) }));

@@ -3,6 +3,7 @@ import { Josefin_Sans } from "next/font/google";
 import Header from "../components/Header";
 import { ReservationProvider } from "../context/ReservationContext";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const josefinSans = Josefin_Sans({
   display: "swap",
@@ -35,6 +36,7 @@ const RootLayout = ({
             <ReservationProvider>{children}</ReservationProvider>
           </div>
         </main>
+        <Toaster position="bottom-right" reverseOrder={true} />
       </body>
     </html>
   );

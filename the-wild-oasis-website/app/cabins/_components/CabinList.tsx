@@ -1,3 +1,5 @@
+"use cache";
+
 import { getCabins } from "@/lib/data-service";
 import CabinCard from "./CabinCard";
 

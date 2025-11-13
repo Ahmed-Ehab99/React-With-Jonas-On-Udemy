@@ -9,7 +9,7 @@ import { BookingFormData, UpdateBooking } from "./types";
 
 // Auth Actions
 export async function signInAction() {
-  await signIn("google", { redirectTo: "/account" });
+  await signIn("google", { redirectTo: "/account/reservations" });
 }
 
 export async function signOutAction() {
@@ -20,6 +20,7 @@ export async function signOutAction() {
 export async function updateProfileAction(formData: FormData) {
   const session = await auth();
   if (!session) redirect("/login");
+
   const nationalID = formData.get("nationalID") as string;
   const nationalityField = formData.get("nationality") as string | null;
 
@@ -39,9 +40,12 @@ export async function updateProfileAction(formData: FormData) {
     .update(updateData)
     .eq("id", Number(session.user?.id));
 
-  if (error) throw new Error("Guest could not be updated");
+ if (error) {
+   return { error: "Guest could not be updated" };
+ }
 
-  revalidatePath("/account/profile");
+ revalidatePath("/account/profile");
+ return { success: true };
 }
 
 // Bookings Actions

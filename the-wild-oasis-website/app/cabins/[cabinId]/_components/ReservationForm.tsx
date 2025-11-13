@@ -9,7 +9,7 @@ import { User } from "next-auth";
 import Image from "next/image";
 import { useState } from "react";
 
-function ReservationForm({ cabin, user }: { cabin: CabinT; user: User }) {
+const ReservationForm = ({ cabin, user }: { cabin: CabinT; user: User }) => {
   const [numGuests, setNumGuests] = useState("");
 
   const { range, resetRange } = useReservation();
@@ -105,6 +105,6 @@ function ReservationForm({ cabin, user }: { cabin: CabinT; user: User }) {
       </form>
     </div>
   );
-}
+};
 
 export default ReservationForm;
